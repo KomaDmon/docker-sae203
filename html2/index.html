@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>ProjetS2.03</title>
+</head>
+<body>
+<header> 
+	<h1>Serveur Partagé</h1>
+		<p><strong>Test :</strong></p>
+	</header>
+	<h2>Les différentes étapes :</h2>
+		<ol>
+		<li>Choix du conteneur Docker :</li>
+			<p>
+				Vous pouvez utiliser différents conteneurs Docker pour différents 
+				systèmes de fichiers. Par exemple, vous pouvez utiliser 'samba' pour 
+				partager des fichiers avec des clients Windows, 
+				'nfs' pour partager des fichiers avec des clients Unix/Linux, 
+				ou 'ftp' pour un serveur FTP.
+			</p>
+
+		<li>Configuration du serveur de fichiers : </li>
+			<p>
+				Utilisez la commande 'docker run' pour créer et démarrer votre 
+				conteneur Docker. Assurez-vous de monter les répertoires 
+				que vous souhaitez partager en tant que volumes Docker pour que 
+				les données soient persistantes.
+			</p>
+			<p>
+				Par exemple, pour créer un serveur Samba :
+			</p>
+			<p>
+				<strong>
+					docker run -it --name samba-server -p 445:445 
+					-v /chemin/vers/repertoire_a_partager:/partage samba
+				</strong>
+			</p>
+
+		<li>Configuration du serveur de fichiers : </li>
+			<p>
+				Suivez les instructions fournies par le fournisseur du conteneur 
+				Docker pour configurer votre serveur de fichiers selon vos besoins. 
+				Cela peut inclure la configuration des utilisateurs et des 
+				autorisations d'accès.
+			</p>
+			
+		<li>Test du partage de fichiers : </li>
+			<p>
+				 Une fois le serveur configuré, testez-le en accédant aux 
+				 fichiers partagés depuis un client. 
+				 Assurez-vous que vous pouvez accéder aux fichiers et que 
+				 les autorisations sont correctement configurées.
+			</p>
+		
+		<li>Gestion du conteneur Docker : </li>
+			<p>
+				Utilisez les commandes Docker appropriées pour gérer votre conteneur, 
+				telles que 'docker start', 'docker stop', 'docker restart', etc., 
+				selon vos besoins.
+			</p>
+		</ol>
+</body>
+</html>
